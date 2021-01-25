@@ -19,6 +19,22 @@ Route::get('tt', function () {
 Route::get('hello', 'index/hello');
 
 Route::get('hello1', 'test/test1/test2');
+
+Route::get('hello2', function (){
+    return view('test@test1/test2');
+}) ;
+
+Route::get('hello3/:name', function ($name){
+    print 'hello, ';
+    print $name;
+    //print($name);
+}) ;
+
+Route::get('', 'welcome/index/home');
+Route::get('/help', 'welcome/index/help');
+Route::get('/about', 'welcome/index/about');
+
+Route::get('/signup', 'user/auth/create');
 return [
 
 ];
